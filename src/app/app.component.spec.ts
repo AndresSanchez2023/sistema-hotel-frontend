@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sistema-vaterinaria-frontend'`, () => {
+  it(`should have as title 'sistema-hotel-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sistema-vaterinaria-frontend');
+    expect(app.title).toEqual('sistema-hotel-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('sistema-vaterinaria-frontend app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('sistema-hotel-frontend app is running!');
   });
 });
