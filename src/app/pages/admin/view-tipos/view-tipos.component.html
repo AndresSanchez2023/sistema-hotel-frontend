@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-list>
+        <div mat-subheader>
+            Todos los tipos de Habitacion
+        </div>
+        <mat-list-item *ngFor="let t of tipoHabitacion">
+            <mat-icon matListItemIcon>meeting_room</mat-icon>
+            <h3 matListItemTitle>{{t.nombre}}</h3>
+            <p matListItemLine class="wrap-text">
+                <span>{{t.descripcion}}</span>
+              </p>
+              <p matListItemLine>
+                <span>Cantidad Personas Permitidas</span>
+                <span class="demo-2"> : {{t.capacidad}}</span>
+              </p>
+              <p matListItemLine>
+              <span>Precio por noche</span>
+                <span class="demo-2"> : {{t.precio}}</span>
+            </p>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20 mb10">
+        <button routerLink="/admin/add-tipo" mat-raised-button color="primary">Agregar Tipo de Habitacion</button>
+    </div>
+</mat-card>

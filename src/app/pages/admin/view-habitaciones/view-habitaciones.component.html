@@ -1,0 +1,25 @@
+<mat-card class="mt10" *ngFor="let h of habitaciones">
+    <mat-card-header>
+        <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + getImageUrl(h.tipoHabitacion.nombre) + ')'}"
+            class="example-header-image"></div>
+        <mat-card-title>
+            {{h.tipoHabitacion.nombre}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{h.numHabitacion}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button color="primary" [routerLink] = "'/admin/ver-reservas/'+h.habitacionId+'/'+h.numHabitacion">Reservas</button>
+            <button mat-stroked-button color="primary" class="ml20">Estado Habitacion : {{h.estadoHabitacion}}</button>
+            <button [routerLink] = "'/admin/habitacion/'+h.habitacionId" mat-flat-button color="primary" class="ml20">Actualizar</button>
+            <button mat-flat-button color="warn" class="ml10" (click)="eliminarHabitacion(h.habitacionId)">Eliminar</button>
+
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+
+<div class="container text-center mt20">
+    <button routerLink="/admin/add-habitacion" mat-raised-button color="primary">Agregar Habitacion</button>
+</div>

@@ -1,0 +1,35 @@
+<mat-card>
+    <div mat-subheader>
+        Agregar Habitacion
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form (ngSubmit) = "guardarHabitacion()">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Numero de Habitacion</mat-label>
+                    <input [(ngModel)]="habitacionData.numHabitacion" type="number" required name="numHabitacion"
+                        placeholder="Digite el numero de Habitacion" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Estado de la Habitacion</mat-label>
+                    <mat-select name="estadoHabitacion" [(ngModel)]="habitacionData.estadoHabitacion.estadoHabitacionEnum">
+                        <mat-option *ngFor="let estado of estadosHabitacion" [value]="estado">
+                            {{estado}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Tipo De Habitacion</mat-label>
+                    <mat-select name="tipoHabitacion" [(ngModel)]="habitacionData.tipoHabitacion.tipoHabitacionId">
+                        <mat-option *ngFor="let t of tipoHabitaciones" [value]="t.tipoHabitacionId">
+                            {{t.nombre}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="container text-center mt15">
+                    <button mat-raised-button color="primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-card>

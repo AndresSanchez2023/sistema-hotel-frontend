@@ -1,0 +1,22 @@
+<h1 class="mt20">Reservas de {{numHabitacion}}</h1>
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngFor="let r of reservas; let i = index" class="my-card">
+                <mat-card-header>
+                    <mat-card-title>Reserva {{i + 1}}</mat-card-title>
+                    <mat-card-subtitle>Cliente: {{r.usuario.nombre}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p><b>Telefono:</b> {{r.usuario.telefono}}</p>
+                    <p><b>Fecha Ingreso:</b> {{r.fechaInicio | date:'mediumDate'}}</p>
+                    <p><b>Fecha Salida:</b> {{r.fechaFin | date:'mediumDate'}}</p>
+                    <p><b>Tipo de Habitacion:</b> {{r.habitacion.tipoHabitacion.nombre}}</p>
+                    <p><b>Precio por noche:</b> {{r.habitacion.tipoHabitacion.precio}}</p>
+                    <p><b>Pago Total:</b> {{r.costoTotal}}</p>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+            </mat-card>
+        </div>
+    </div>
+</div>

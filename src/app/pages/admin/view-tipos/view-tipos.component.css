@@ -1,0 +1,5 @@
+.wrap-text {
+    white-space: pre-wrap; /* Asegura que el texto se ajuste y respete los saltos de línea */
+    word-wrap: break-word; /* Rompe palabras largas que no caben en la línea */
+    overflow-wrap: break-word; /* Similar a word-wrap */
+}

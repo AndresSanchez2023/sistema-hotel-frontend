@@ -1,0 +1,22 @@
+.my-card {
+    margin-top: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.my-card mat-card-title {
+    color: #3F51B5; 
+    font-size: 1.2em;
+}
+
+.my-card p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.my-card mat-card-subtitle {
+    font-size: 1.2em; 
+    color: black; 
+}
+
+

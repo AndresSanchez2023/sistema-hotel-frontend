@@ -9,6 +9,13 @@ import { AdminGuardService } from './services/admin.guard';
 import { NormalGuardService } from './services/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginService } from './services/login.service';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewTiposComponent } from './pages/admin/view-tipos/view-tipos.component';
+import { AddTipoComponent } from './pages/admin/add-tipo/add-tipo.component';
+import { ViewHabitacionesComponent } from './pages/admin/view-habitaciones/view-habitaciones.component';
+import { AddHabitacionComponent } from './pages/admin/add-habitacion/add-habitacion.component';
+import { ActualizarHabitacionComponent } from './pages/admin/actualizar-habitacion/actualizar-habitacion.component';
+import { ViewHabitacionReservasComponent } from './pages/admin/view-habitacion-reservas/view-habitacion-reservas.component';
 
 const routes: Routes = [
   {
@@ -29,12 +36,39 @@ const routes: Routes = [
   {
     path: 'admin',
     component: DashboardComponent,
-    pathMatch: 'full',
     canActivate: ['adminCanActivate'],
     children: [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: '',
+        component : WelcomeComponent
+      },
+      {
+        path: 'tipohab',
+        component:ViewTiposComponent
+      },
+      {
+        path:'add-tipo',
+        component: AddTipoComponent
+      },
+      {
+        path: 'habitaciones',
+        component: ViewHabitacionesComponent
+      },
+      {
+        path:'add-habitacion',
+        component: AddHabitacionComponent
+      },
+      {
+        path:'habitacion/:habitacionId',
+        component:ActualizarHabitacionComponent
+      },
+      {
+        path: 'ver-reservas/:habitacionId/:numHabitacion',
+        component: ViewHabitacionReservasComponent
       }
     ]
   },

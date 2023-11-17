@@ -1,0 +1,66 @@
+<mat-card>
+    <div mat-subheader>
+        Agregar tipo de Habitacion
+    </div>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input
+                            required 
+                            autofocus
+                            type="text"
+                            name="nombre"
+                            matInput
+                            placeholder="Digite el nombre del Tipo de Habitacion"
+                            [(ngModel)] = "tipoHabitacion.nombre"
+                            >
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Descripcion</mat-label>
+                            <textarea
+                            required
+                            name="descripcion"
+                            type="text"
+                            matInput 
+                            placeholder="Digite la descripcion del tipo de Habitacion"
+                            rows="5"
+                            [(ngModel)] = "tipoHabitacion.descripcion"
+                            >
+                            </textarea>
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Numero maximo de Personas</mat-label>
+                            <input 
+                            required
+                            type="number"
+                            name="cantidad"
+                            matInput
+                            placeholder="Digite el numero maximo de personas permitidas "
+                            [(ngModel)] = "tipoHabitacion.capacidad"
+                            >
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Precio</mat-label>
+                            <input
+                            required 
+                            type="number"
+                            name="precio"
+                            matInput
+                            placeholder="Digite el precio por noche"
+                            [(ngModel)] = "tipoHabitacion.precio"
+                            >
+                        </mat-form-field>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

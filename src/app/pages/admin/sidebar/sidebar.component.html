@@ -1,11 +1,26 @@
 <mat-card>
     <mat-action-list>
         <div mat-subheader>Menu</div>
-        <button mat-list-item>
-            <mat-icon mat-list-icon>Home</mat-icon>
-        </button>
-        <button mat-list-item routerLink="/admin/profile">
-            <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
-        </button>
+        <a routerLink="/admin" mat-list-item>
+            <mat-icon matListItemIcon>home</mat-icon> Inicio
+        </a>
+        <a mat-list-item routerLink="/admin/profile">
+            <mat-icon matListItemIcon>account_circle</mat-icon>Perfil
+        </a>
+        <a mat-list-item routerLink="/admin/tipohab">
+            <mat-icon matListItemIcon>list</mat-icon>Tipo Habitaciones
+        </a>
+        <a mat-list-item routerLink="/admin/add-tipo">
+            <mat-icon matListItemIcon>add_circle_outline</mat-icon>Agregar Tipo Habitacion
+        </a>
+        <a mat-list-item routerLink="/admin/habitaciones">
+            <mat-icon matListItemIcon>room_service</mat-icon>Habitaciones
+        </a>
+        <a mat-list-item routerLink="/admin/add-habitacion">
+            <mat-icon matListItemIcon>add</mat-icon>Agregar Habitacion
+        </a>
+        <a mat-list-item routerLink="/admin/profile">
+            <mat-icon matListItemIcon>logout</mat-icon>Salir
+        </a>        
     </mat-action-list>
 </mat-card>
