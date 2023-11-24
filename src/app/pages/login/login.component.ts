@@ -47,10 +47,12 @@ export class LoginComponent implements OnInit {
           if(this.loginServices.getUserRole() == "ADMIN"){
             //Dashboard admin
             //window.location.href = '/admin';
-            this.router.navigate(['admin']);
+            //this.router.navigate(['admin']);
+            this.postLoginRedirect('admin');
             this.loginServices.loginStatusSubjec.next(true);
           }else if(this.loginServices.getUserRole() == "Normal"){
-            this.router.navigate(['user-dashboard']);
+            //this.router.navigate(['user-dashboard']);
+            this.postLoginRedirect('user-dashboard');
             this.loginServices.loginStatusSubjec.next(true);
           }else{
             this.loginServices.logout();
@@ -63,5 +65,17 @@ export class LoginComponent implements OnInit {
         })
       }
     )
+  }
+
+  postLoginRedirect(ruta:any) {
+    const rutaPostLogin = localStorage.getItem('rutaPostLogin');
+    
+    if (rutaPostLogin) {
+      this.router.navigate([rutaPostLogin]);
+      localStorage.removeItem('rutaPostLogin'); // Limpieza
+    } else {
+      // Redirigir a una ruta por defecto si no hay ruta guardada
+      this.router.navigate([ruta]);
+    }
   }
 }

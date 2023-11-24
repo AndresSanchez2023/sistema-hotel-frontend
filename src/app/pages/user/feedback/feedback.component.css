@@ -1,0 +1,42 @@
+mat-card {
+    margin: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+mat-radio-button {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comment-section {
+    margin-bottom: 20px;
+}
+
+.calification-table {
+    margin-top: 20px;
+}
+
+.calification-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calification-table th,
+.calification-table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    text-align: left;
+}
+
+.calification-table th {
+    background-color: #f5f5f5;
+}
+
+.textarea-large {
+    height: 200px !important;
+    width: 500px !important; 
+}
+

@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -34,6 +37,12 @@ import { ViewHabitacionesComponent } from './pages/admin/view-habitaciones/view-
 import { AddHabitacionComponent } from './pages/admin/add-habitacion/add-habitacion.component';
 import { ActualizarHabitacionComponent } from './pages/admin/actualizar-habitacion/actualizar-habitacion.component';
 import { ViewHabitacionReservasComponent } from './pages/admin/view-habitacion-reservas/view-habitacion-reservas.component';
+import { CarouselComponent } from './pages/carousel/carousel.component';
+import { DetallesTipoHabitacionComponent } from './pages/detalles-tipo-habitacion/detalles-tipo-habitacion.component';
+import { SidebarComponent as UserSidebar} from './pages/user/sidebar/sidebar.component';
+import { ViewUsuarioReservasComponent } from './pages/user/view-usuario-reservas/view-usuario-reservas.component';
+import { FeedbackComponent } from './pages/user/feedback/feedback.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +61,11 @@ import { ViewHabitacionReservasComponent } from './pages/admin/view-habitacion-r
     AddHabitacionComponent,
     ActualizarHabitacionComponent,
     ViewHabitacionReservasComponent,
+    CarouselComponent,
+    DetallesTipoHabitacionComponent,
+    UserSidebar,
+    ViewUsuarioReservasComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +81,10 @@ import { ViewHabitacionReservasComponent } from './pages/admin/view-habitacion-r
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

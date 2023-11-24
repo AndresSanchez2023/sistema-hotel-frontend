@@ -16,4 +16,8 @@ export class TipoHabitacionService {
   public agregarTipoHabitacion(tipoHabitacion:any){
     return this.http.post(`${baseUrl}/tipoHabitacion/`, tipoHabitacion);
   }
+
+  listarTipoHabitacionPorId(tipoHabitacionId: number) {
+    return this.http.get<any>(`${baseUrl}/tipoHabitacion/${tipoHabitacionId}`);
+  }
 }

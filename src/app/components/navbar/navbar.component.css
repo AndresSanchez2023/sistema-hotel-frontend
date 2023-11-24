@@ -6,3 +6,8 @@ mat-toolbar {
     display: flex;
     justify-content: space-between;
 }
+
+.mi-toolbar-color {
+    background-color: #424242;
+    color: #fff;
+}

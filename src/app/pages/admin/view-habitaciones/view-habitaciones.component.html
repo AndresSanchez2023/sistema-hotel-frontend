@@ -15,7 +15,6 @@
             <button mat-stroked-button color="primary" class="ml20">Estado Habitacion : {{h.estadoHabitacion}}</button>
             <button [routerLink] = "'/admin/habitacion/'+h.habitacionId" mat-flat-button color="primary" class="ml20">Actualizar</button>
             <button mat-flat-button color="warn" class="ml10" (click)="eliminarHabitacion(h.habitacionId)">Eliminar</button>
-
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

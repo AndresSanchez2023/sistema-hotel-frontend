@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Realizar Retroalimentación</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="calification-table">
+            <table mat-table>
+                <tr>
+                    <th>Calificación</th>
+                    <th>Significado</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Malo</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Neutro</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Bueno</td>
+                </tr>
+            </table>
+        </div>
+        <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()">
+            <div *ngFor="let question of questions; let i = index" class="question">
+                <p>{{question.text}}</p>
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="question.response" name="question{{i}}">
+                    <mat-radio-button *ngFor="let option of question.options" [value]="option">{{option}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="comment-section">
+                <mat-form-field appearance="fill">
+                    <mat-label>Dejenos su comentario y posibles mejoras</mat-label>
+                    <textarea matInput [(ngModel)]="comment" name="comment" class="textarea-large" required></textarea>
+                </mat-form-field>
+            </div>
+            <button type="submit" mat-raised-button color="primary">Guardar</button>
+        </form>
+        
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,14 @@
+<mat-card *ngIf="usuario">
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <a routerLink="/home" mat-list-item>
+            <mat-icon matListItemIcon>home</mat-icon> Inicio
+        </a>
+        <a mat-list-item routerLink="/user-dashboard/profile">
+            <mat-icon matListItemIcon>account_circle</mat-icon>Perfil
+        </a>
+        <a mat-list-item [routerLink]="['/user-dashboard/ver-reservas', usuario.id]">
+            <mat-icon matListItemIcon>list</mat-icon>Reservas
+        </a>     
+    </mat-action-list>
+</mat-card>

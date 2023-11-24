@@ -1,0 +1,21 @@
+<div class="dsc-carousel" [ngStyle]="{'min-height': finalHeight}">
+    <div class = "dsc-carousel__btns">
+        <i class = "fa fa-chevron-circle-left" (click)="setBack()"></i>
+        <i class = "fa fa-chevron-circle-right" (click)="setNext()"></i>
+    </div>
+    <div class="dsc-carousel__content">
+        <ng-container *ngFor="let section of carouselItems;">
+            <div class="dsc-carousel__content-item" [ngStyle]="{'background-image': 'url(' + getImageUrl(section.nombre) + ')', 'margin-left': section.marginLeft + '%' }">
+                <h1><span>{{section.nombre}}</span></h1>
+                <p>{{section.descripcion}}</p>
+                    <button class="ver-mas-btn" (click)="verDetalles(section.tipoHabitacionId)">Ver más</button>
+            </div>
+        </ng-container>
+    </div>
+    <div class="dsc-carousel__steps">
+        <div class="dsc-carousel__steps-step 
+        dsc-carousel__steps-step-{{currentposition === item.id ? 'active': ''}}" 
+        *ngFor = "let item of carouselItems" (click) = "setCurrentPosition(item.id)">
+        </div>
+    </div>
+</div>

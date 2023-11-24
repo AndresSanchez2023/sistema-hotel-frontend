@@ -1,0 +1,95 @@
+/* detalles-tipo-habitacion.component.css */
+/* detalles-tipo-habitacion.component.css */
+.detalle-imagen {
+  height: 500px;
+  width: 100%;
+  /* La imagen ocupará el ancho completo del card */
+  /* Mantiene la proporción de la imagen */
+  display: block;
+  /* Remueve cualquier margen extra y hace que la imagen se ajuste bien */
+  margin: auto;
+  object-fit: cover;
+  
+  padding: 10px;
+}
+
+.fechas-container {
+  display: flex;
+  flex-direction: row; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente (útil si tienes altura definida) */
+  gap: 16px; /* Espacio entre los elementos */
+  margin-bottom: 16px
+}
+
+@media screen and (max-width: 768px) {
+  .detalle-imagen {
+    height: 200px;
+    /* Ajusta la altura para dispositivos más pequeños */
+  }
+}
+
+.wrap-text {
+  white-space: pre-wrap;
+  /* Asegura que el texto se ajuste y respete los saltos de línea */
+  word-wrap: break-word;
+  /* Rompe palabras largas que no caben en la línea */
+  overflow-wrap: break-word;
+  /* Similar a word-wrap */
+}
+
+p,
+h3 {
+  padding: 10px;
+}
+
+.verificar-disponibilidad-btn {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  text-align: right;
+  padding-top: 15px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.detalle-reserva-card {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.detalle-reserva-card mat-card-header {
+  background-color: #e0e0e0;
+  border-radius: 5px 5px 0 0;
+}
+
+.detalle-reserva-card mat-card-title {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.detalle-reserva-card mat-list-item {
+  line-height: 1.6;
+  color: #666;
+}
+
+.centrado-mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+
+.verificar-disponibilidad-btn button {
+  font-weight: bold;
+}

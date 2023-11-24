@@ -1,0 +1,87 @@
+<!-- detalles-tipo-habitacion.component.html -->
+<mat-card>
+  <mat-card-header>
+    <img mat-card-image class="detalle-imagen" [src]="getImageUrl(tipoHabitacion?.nombre)"
+      alt="Imagen del tipo de habitación">
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Información adicional de la habitación -->
+    <div class="d-flex">
+      <mat-list>
+        <h3 matListItemTitle>{{tipoHabitacion?.nombre}} </h3>
+        <p matListItemLine class="wrap-text">
+          <span>{{tipoHabitacion?.descripcion}}</span>
+        </p>
+        <p matListItemLine>
+          <span>Cantidad Personas Permitidas</span>
+          <span class="demo-2"> : {{tipoHabitacion?.capacidad}}</span>
+        </p>
+        <p matListItemLine>
+          <span>Precio por noche</span>
+          <span class="demo-2"> : {{tipoHabitacion?.precio}}</span>
+        </p>
+      </mat-list>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>beach_access</mat-icon>
+          <div matListItemLine>Vista al mar</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>ac_unit</mat-icon>
+          <div matListItemLine>Aire acondicionado</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>network_wifi</mat-icon>
+          <div matListItemLine>Internet</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>local_bar</mat-icon>
+          <div matListItemLine>Mini-bar</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>smoke_free</mat-icon>
+          <div matListItemLine>Prohibido Fumar en la habitación, aplica penalidad de $350.000 </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <div class="fechas-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Check-in</mat-label>
+        <input matInput [matDatepicker]="checkInPicker" [(ngModel)]="checkInDate">
+        <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+        <mat-datepicker #checkInPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Check-out</mat-label>
+        <input matInput [matDatepicker]="checkOutPicker" [(ngModel)]="checkOutDate">
+        <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+        <mat-datepicker #checkOutPicker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+    <div class="verificar-disponibilidad-btn">
+      <button (click)="verificarDisponibilidad(tipoHabitacion.tipoHabitacionId , checkInDate, checkOutDate)"
+        mat-raised-button color="primary">verificar disponibilidad</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="detalleReserva" class="centrado-mat-card">
+  <mat-card-header>
+    <mat-card-title>Detalle De Reserva</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Tipo de habitación: {{tipoHabitacion?.nombre}}</p>
+    <p>Personas Permitidas: {{tipoHabitacion?.capacidad}}</p>
+    <p>Días de Estancia: {{detalleReserva?.diasEstancia}}</p>
+    <p>Costo Total: {{ detalleReserva?.costoTotal | currency }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="verificar-disponibilidad-btn">
+      <button (click)="confirmarReserva()" mat-raised-button color="primary">Confirmar Reserva</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

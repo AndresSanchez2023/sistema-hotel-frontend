@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
 
@@ -31,5 +31,14 @@ export class HabitacionService {
 
     public actualizarHabitacion(habitacion:any){
       return this.http.put(`${baseUrl}/habitacion/`,habitacion);
+    }
+
+    public verificarDisponibilidad(tipoHabitacionId: number, fechaInicio: string, fechaFin: string){
+      return this.http.get(`${baseUrl}/habitacion/disponibilidad`, {
+        params: new HttpParams()
+          .set('tipoHabitacionId', tipoHabitacionId.toString())
+          .set('fechaInicio', fechaInicio) // Formato 'YYYY-MM-DD'
+          .set('fechaFin', fechaFin) // Formato 'YYYY-MM-DD'
+        });
     }
 }

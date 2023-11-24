@@ -12,4 +12,12 @@ export class ReservaService {
   public listarReservasDeHabitacion(habitacionId:any){
     return this.http.get(`${baseUrl}/reserva/habitacion/${habitacionId}`);
   }
+
+  public listarReservasDeUsuario(usuarioId: any){
+    return this.http.get(`${baseUrl}/reserva/usuario/${usuarioId}`);
+  }
+
+  public agregarReserva(reserva:any){
+    return this.http.post(`${baseUrl}/reserva/`, reserva);
+  }
 }
